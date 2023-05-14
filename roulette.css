@@ -1,0 +1,195 @@
+:root{
+    --escala:300px;
+    --giroRuleta : 0deg;
+}
+
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#selectorOpcion{
+    max-width: 250px;
+	position: relative;
+	top: -100px;
+}
+#selectorOpcion select{
+    position: absolute;
+    left: 160px;
+    display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+#ganadorTexto{
+    text-align: center;
+}
+#cartelGanador{
+	position: absolute;
+	left: -150px;
+	background-color: rgba(29,141,125,1);
+	height: 42px;
+	width: 305px;
+    border-radius: 12px;
+	font-weight: bold;
+}
+
+#marcador{
+    position: absolute;
+    z-index: 10;
+    top : -20px;
+    background-color: white;
+    border: 1px black solid;
+    height: 70px;
+    width:3px;
+    pointer-events: none;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+h1{
+    text-align: center;
+}
+
+#girar{
+    position: absolute;
+    top:calc(50% - 30px);
+    left:calc(50% - 30px);
+    z-index: 1; /*para ver el boton siempre*/
+    width: 60px;
+    height: 60px;
+    background-color: grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#girar button {
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+}
+#roulette{
+    position: relative;
+    width: var(--escala);
+    height: var(--escala);
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.opcion{
+    position: absolute;
+    width: var(--escala);
+    height: var(--escala);
+}
+
+.girar{
+    animation-name: girar;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:cubic-bezier(0.1, 0, 0.18,0.99);
+}
+
+@keyframes girar{
+    100%{
+       transform: rotate(var(--giroRuleta)); 
+    }
+}
+#opcion1{
+    background-color: red;
+    clip-path: polygon(50% 0, 100% 0, 100% 0%, 50% 50%);
+}
+
+.red{
+    background-color: red;
+}
+
+#opcion2{
+    background-color: green;
+    clip-path: polygon(100% 0%, 100% 0, 100% 50%, 50% 50%);
+}
+
+.green{
+    background-color: green;
+}
+
+#opcion3{
+    background-color: blue;
+    clip-path: polygon(100% 50%, 100% 50%, 100% 100%, 50% 50%);
+}
+
+.blue{
+    background-color: blue;
+}
+ 
+#opcion4{
+    background-color: purple;
+    clip-path: polygon(50% 50%, 100% 100%, 50% 100%, 50% 50%);
+}
+
+.purple{
+    background-color: purple;
+}
+ 
+
+#opcion5{
+    background-color: black;
+    clip-path: polygon(50% 50%, 50% 100%, 0 100%, 50% 50%);
+}
+
+.black{
+    background-color: black;
+}
+
+#opcion6{
+    background-color: yellow;
+    clip-path: polygon(50% 50%, 0 100%, 0 50%, 50% 50%);
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+#opcion7{
+    background-color: yellowgreen;
+    clip-path: polygon(50% 50%, 0 50%, 0 0, 50% 50%);
+}
+
+.yellowgreen{
+    background-color: yellowgreen;
+}
+
+#opcion8{
+    background-color: orange;
+    clip-path: polygon(50% 50%, 0 0, 50% 0, 50% 50%);
+}
+
+.orange{
+    background-color: orange;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ruleta</title>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "roulette.css">
+    <script type = "text/javascript" src = "roulette.js"></script>
+</head>
+<body>
+    <h1>Haz tu propia ruleta</h1>
+    <div id = "container">
+        <div id = "selectorOpcion">
+            <div id="cartelGanador">
+				<p id="ganadorTexto">¡Selecciona un color y haz click en "Girar"!</p>
+			</div>
+            <select id = "color" name="select" class = "blue" onchange="colorElegido()">
+                <option value="red" class = "red"></option>
+                <option value="blue" class = "blue" selected ></option>
+                <option value="green" class = "green"></option>
+                <option value="purple" class = "purple"></option>
+                <option value="black" class = "black"></option>
+                <option value="yellow" class = "yellow"></option>
+                <option value="yellowgreen" class = "yellowgreen"></option>
+                <option value="orange" class = "orange"></option>
+              </select>
+        </div>
+        <div id="marcador">
+		</div>
+        <div id = "roulette">
+            <div id = "opcionesRuleta">
+                <div id = "girar" onclick="sortear()">
+                    <button>
+                        Girar
+                    </button>
+                </div>
+                <div class = "opcion" id = "opcion1"></div>
+                <div class = "opcion" id = "opcion2"></div>
+                <div class = "opcion" id = "opcion3"></div>
+                <div class = "opcion" id = "opcion4"></div>
+                <div class = "opcion" id = "opcion5"></div>
+                <div class = "opcion" id = "opcion6"></div>
+                <div class = "opcion" id = "opcion7"></div>
+                <div class = "opcion" id = "opcion8"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
