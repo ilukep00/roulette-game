@@ -27,9 +27,8 @@
   	outline: 0; 
   	border: 0;
 	border-radius: 0;
-	color: #7b7b7b;
+	color: black;
 	font-size: 1em;
-	color: #999;
 	font-family: 
 	'Quicksand', sans-serif;
 	border:2px solid rgba(0,0,0,0.2);
@@ -82,7 +81,7 @@ h1{
     z-index: 1; /*para ver el boton siempre*/
     width: 60px;
     height: 60px;
-    background-color: grey;
+    background-color: black;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -94,6 +93,7 @@ h1{
     background-color: unset;
     border: unset;
     cursor: pointer;
+        color:white;
 }
 #roulette{
     position: relative;
@@ -161,12 +161,12 @@ h1{
  
 
 #opcion5{
-    background-color: black;
+    background-color: grey;
     clip-path: polygon(50% 50%, 50% 100%, 0 100%, 50% 50%);
 }
 
-.black{
-    background-color: black;
+.grey{
+    background-color: grey;
 }
 
 #opcion6{
@@ -179,17 +179,17 @@ h1{
 }
 
 #opcion7{
-    background-color: yellowgreen;
+    background-color: #FF69B4;
     clip-path: polygon(50% 50%, 0 50%, 0 0, 50% 50%);
 }
 
-.yellowgreen{
-    background-color: yellowgreen;
+.pink{
+    background-color: #FF69B4;
 }
 
 #opcion8{
     background-color: orange;
-    clip-path: polygon(50% 50%, 0 0, 50% 0, 50% 50%);
+     clip-path: polygon(50% 50%, 0 0, 50% 0, 50% 50%);
 }
 
 .orange{

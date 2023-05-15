@@ -4,8 +4,8 @@ var ruleta;
 var sorteando = false;
 var ganadorTexto;
 var select;
-var color;
-var colorSeleccionado;
+var color = "blue";
+var colorSeleccionado = "Azul";
 function sortear(){
     if(sorteando){
         return
@@ -13,7 +13,6 @@ function sortear(){
     sorteando = true;
     ruleta.classList.toggle('girar',true);
     nSorteo = Math.random(); //devuelve numero entre 0 y 1
-    console.log(nSorteo);
     const giroRuleta = 2*360 + (1-nSorteo)*360;
     root.style.setProperty("--giroRuleta",giroRuleta+"deg")
     if(nSorteo*100 <= 12.5){
@@ -34,7 +33,7 @@ function sortear(){
     }
     else if(nSorteo*100 <= 62.5){
         
-        ganador = "Negro"
+        ganador = "Gris"
     }
     else if(nSorteo*100 <= 75){
         
@@ -42,13 +41,12 @@ function sortear(){
     }
     else if(nSorteo*100 <= 87.5){
         
-        ganador = "Verde amarillento"
+        ganador = "Rosa"
     }
     else if(nSorteo*100 <= 100){
        
         ganador = "Naranja"
     }
-    sorteando = false;
 }
 /** Devuelve la rotación en grados de un elemento */
 function getCurrentRotation(el){
@@ -71,6 +69,7 @@ function cargarRuleta(){
     ruleta = document.getElementById("roulette");
     ganadorTexto = document.getElementById("ganadorTexto");
     select = document.getElementById("color");
+    select.value = "blue";
     ruleta.addEventListener("animationend", ()=>{
         ruleta.style.transform = "rotate("+getCurrentRotation(ruleta)+"deg)";
 		ruleta.classList.toggle("girar",false);
@@ -78,10 +77,16 @@ function cargarRuleta(){
             ganadorTexto.textContent = "Has ganado!!!";
         else
             ganadorTexto.textContent = "Has fallado, pruebelo otra vez!";
+        sorteando = false;
 })
 }
 
 function colorElegido(){
+	if(sorteando){
+		select.value = color;
+		ganadorTexto.textContent = colorSeleccionado+" seleccionado";
+        return
+    }
     color = select.value;
     select.setAttribute("class", color)
     if(color == "red"){
@@ -96,14 +101,14 @@ function colorElegido(){
     else if(color == "purple"){
         colorSeleccionado = "Morado"
     }
-    else if(color == "black"){
-        colorSeleccionado = "Negro"
+    else if(color == "grey"){
+        colorSeleccionado = "Gris"
     }
     else if(color == "yellow"){  
         colorSeleccionado = "Amarillo"
     }
-    else if(color == "yellowgreen"){  
-        colorSeleccionado = "Verde amarillento"
+    else if(color == "pink"){  
+        colorSeleccionado = "Rosa"
     }
     else if(color == "orange"){
         colorSeleccionado = "Naranja"
